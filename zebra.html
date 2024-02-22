@@ -1,0 +1,67 @@
+<html>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript" src="js/BrowserPrint-1.0.4.min.js"></script>
+
+<script type="text/javascript">
+
+var format_start = "^XA^LL200^FO80,50^A0N36,36^FD";
+
+var format_end = "^FS^XZ";
+
+var txtToPrint = "Itza Miragul";
+
+ 
+
+function printTest() {
+
+    testPresent(); // Added function to attached BrowserPrint-1.0.4.min.js to test if script could see it. This alert pops. Remove this line to use original BrowserPrint-1.0.4.min.js instead of attached version.
+
+    BrowserPrint.getDefaultDevice('printer', function(printer)
+
+        {
+
+            if((typeof printer != "undefined") && (printer.connection == undefined))
+
+            {
+
+                alert("No Printer Found");
+
+                    // give option to choose printer
+
+            }
+
+            else{
+
+                alert(printer.name); // This alert does not pop - why???
+
+                printer.send(format_start + txtToPrint + format_end);
+
+            }
+
+        },
+
+        function(error_response)
+
+        {
+
+            // This alert doesn't pop either
+
+            alert(    "An error occured while attempting to connect to your Zebra Printer. " +
+
+                    "You may not have Zebra Browser Print installed, or it may not be running. " +
+
+                    "Install Zebra Browser Print, or start the Zebra Browser Print Service, and try again.");
+
+        }
+
+    );
+
+    alert("After BrowserPrint"); //This alert pops
+
+}
+
+</script>
+<input type="submit" name="print" id="zebra" onclick="printTest();">
+</html>
