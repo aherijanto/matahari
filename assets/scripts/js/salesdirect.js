@@ -132,6 +132,19 @@ function puttoarrayphp(itemcode, itemname, itemQTY,wareid, txtharga,disc,discrp)
   });
 }
 
+function clear_comments(){
+  $('#commentharga1').val('');
+  $('#commentharga2').val('');
+  $('#commentharga3').val('');
+  $('#commentharga4').val('');
+  $('#commentharga5').val('');
+  $('#commentharga6').val('');
+  $('#commentharga7').val('');
+  $('#commentharga8').val('');
+  $('#commentharga9').val('');
+  $('#commentharga10').val('');
+
+}
 function searchname() {
   var itemname = $("#itemname").val();
   console.log(itemname);
@@ -163,7 +176,9 @@ function searchname() {
           url: "/assets/scripts/ajax/loadcomments.php",
           data: "id=" + id,
           success: function (resp_comments) {
-            //calculate percent
+            //clearing comment price
+            clear_comments();
+            //load comment price
             var jsonComments = $.parseJSON(resp_comments);
             $(jsonComments).each(function (i, val) {
               $.each(val, function (k, comments) {
@@ -509,7 +524,7 @@ function checkPIN(){
     } //response
   }); //ajax
 }
-
+//
 function updatecomment(x,y,z){
   $.ajax({
     type: "POST",

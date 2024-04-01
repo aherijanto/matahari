@@ -224,7 +224,21 @@ class Inventory{
           echo $this->i_wareid;
        }
 
+    
+    function save_comment($comment){
+      include 'class/_parkerconnection.php';
+      $i_code     = $this->i_code;
+      try {
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $stmt = "INSERT INTO price_remark (item_code,rem01) VALUES ('$i_code','$comment')";
+            //echo '<br/>'.$stmt;
+            $pdo->exec($stmt);
+    } catch(PDOException $e) {
+        echo $e->getMessage();
+    }
 
+     
+    }
     function save_inventory(){
       include 'class/_parkerconnection.php';
 

@@ -43,7 +43,7 @@
 					// Insertion failed
 					$arr=array('message'=>"failed insert");
 				}
-				// $arr = array('id' => '0',
+				// $arr = array('id' => '0',//
 				// 			 'nm' => '',
 				// 			 'spc'=> '',
 				// 			 'addr' => '',

@@ -256,7 +256,7 @@ if($_GET['tag']=='edit'){
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #1 :</label>
 							<input type="text" id="txtharga1" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga1" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga1" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga1" style="margin-left:10px;">Add</button>
 
 						</div>
@@ -264,63 +264,63 @@ if($_GET['tag']=='edit'){
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #2 :</label>
 							<input type="text" id="txtharga2" class="form-control input-sm" maxlength="50" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga2" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga2" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga2" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #3 :</label>
 							<input type="text" id="txtharga3" class="form-control input-sm" maxlength="50" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga3" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga3" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga3" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #4 :</label>
 							<input type="text" id="txtharga4" class="form-control input-sm" maxlength="100" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga4" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga4" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga4" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #5 :</label>
 							<input type="text" id="txtharga5" class="form-control input-sm" maxlength="100" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga5" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga5" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga5" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #6 :</label>
 							<input type="text" id="txtharga6" class="form-control input-sm" maxlength="100" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga6" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga6" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga6" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #7 :</label>
 							<input type="text" id="txtharga7" class="form-control input-sm" maxlength="100" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga7" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga7" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga7" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #8 :</label>
 							<input type="text" id="txtharga8" class="form-control input-sm" maxlength="100" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga8" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga8" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga8" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #9 :</label>
 							<input type="text" id="txtharga9" class="form-control input-sm" maxlength="100" style="width:200px;margin-left:20px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga9" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga9" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga9" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Harga #10 :</label>
 							<input type="text" id="txtharga10" class="form-control input-sm" maxlength="100" style="width:200px;margin-left:10px;margin-top:5px;">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<input type="text" id="commentharga10" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;">
+							<input type="text" id="commentharga10" class="form-control input-sm" maxlength="50" style="width:200px;margin-top:5px;margin-left:20px;" disabled>
 							<button type="button" class="btn btn-primary" id="btnHarga10" style="margin-left:10px;margin-top:5px;">Add</button>
 						</div>
 

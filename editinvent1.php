@@ -60,8 +60,24 @@ if (!empty($_GET['codeinvent']))
                $myi_status  = $row->i_status;
                $myware      = $row->ware_id;
                
-              
               }
+
+              try {
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sqlremark = "SELECT * FROM price_remark WHERE item_code = :c_code";
+                $stmtremark = $pdo->prepare($sqlremark);
+                $stmtremark->bindParam(':c_code', $codeinvent, PDO::PARAM_STR);
+                $stmtremark->execute();
+                $totalremark = $stmtremark->rowCount();
+                
+                
+                  $rowremark=$stmtremark->fetchObject();
+                  $myi_catatan = $rowremark->rem01;
+                  
+                
+            } catch(PDOException $e) {
+                echo $e->getMessage();
+            }
 
 /*echo 'Code '.$myi_code.'<br/>';
 echo 'Group '.$myg_code.'<br/>';
@@ -88,151 +104,155 @@ echo 'Image '.$myi_imgfile.'<br/>';*/
 
 
 
-  
-<form method="post" action="">
-  <table>
+<div style="margin-left:40px;margin-bottom:30px;">  
+  <form method="post" action="">
+    <table>
 
-  <tr>
-    <td>Group</td>
-    <td><input type='text' name="mygroup" value="<?php echo $myg_code; ?>" readonly></td>
-  </tr>
+    <tr>
+      <td>Group</td>
+      <td><input type='text' name="mygroup" value="<?php echo $myg_code; ?>" readonly></td>
+    </tr>
 
-  <tr>
-    <td>Supplier</td>
-    <td><input type='text' name="mysupp" value="<?php echo $mys_code; ?>" readonly></td>
-  </tr>
+    <tr>
+      <td>Supplier</td>
+      <td><input type='text' name="mysupp" value="<?php echo $mys_code; ?>" readonly></td>
+    </tr>
 
-  <tr>
-    <td>Warehouse</td>
-    <td><input type='text' name="myware" value="<?php echo $myware; ?>" readonly></td>
-  </tr>
+    <tr>
+      <td>Warehouse</td>
+      <td><input type='text' name="myware" value="<?php echo $myware; ?>" readonly></td>
+    </tr>
 
-  <tr>
-    <td>Code</td>
-    <td><input type='text' name="mycode" value="<?php echo $myi_code; ?>" readonly></td>
-  </tr>
+    <tr>
+      <td>Code</td>
+      <td><input type='text' name="mycode" value="<?php echo $myi_code; ?>" readonly></td>
+    </tr>
 
-  <tr>
-    <td>BarCode</td>
-    <td><input type='text' name="mybarcode" value="<?php echo $myi_barcode; ?>" ></td>
-  </tr>
+    <tr>
+      <td>BarCode</td>
+      <td><input type='text' name="mybarcode" value="<?php echo $myi_barcode; ?>" ></td>
+    </tr>
 
-  <tr>
-    <td>Merk</td>
-    <td><input type='text' name="mymerk" value="<?php echo $myi_brands; ?>"></td>
-  </tr>
-  <tr>
-    <td>Warna</td>
-    <td><input type='text' name="mywarna" value="<?php echo $myi_color; ?>"></td>
-  </tr>
-  <tr>
-    <td>Ukuran</td>
-    <td><input type='text' name="myukuran" value="<?php echo $myi_size; ?>"></td>
-  </tr>
-  <tr>
-    <td>Artikel</td>
-    <td><input type='text' name="myartikel" value="<?php echo $myi_article; ?>"></td>
-  </tr>
-  
+    <tr>
+      <td>Merk</td>
+      <td><input type='text' name="mymerk" value="<?php echo $myi_brands; ?>"></td>
+    </tr>
+    <tr>
+      <td>Warna</td>
+      <td><input type='text' name="mywarna" value="<?php echo $myi_color; ?>"></td>
+    </tr>
+    <tr>
+      <td>Ukuran</td>
+      <td><input type='text' name="myukuran" value="<?php echo $myi_size; ?>"></td>
+    </tr>
+    <tr>
+      <td>Artikel</td>
+      <td><input type='text' name="myartikel" value="<?php echo $myi_article; ?>"></td>
+    </tr>
+    
 
-  <tr>
-    <td>Name</td>
-    <td><input type='text' name="myname" value="<?php echo $myi_name; ?>"></td>
-  </tr>
+    <tr>
+      <td>Name</td>
+      <td><input type='text' name="myname" value="<?php echo $myi_name; ?>"></td>
+    </tr>
 
-  <tr>
-    <td>Vol</td>
-    <td><input type='text' name="myvol" value="<?php echo $myi_vol; ?>"></td>
-  </tr>
+    <tr>
+      <td>Vol</td>
+      <td><input type='text' name="myvol" value="<?php echo $myi_vol; ?>"></td>
+    </tr>
 
-  <tr>
-    <td>Vol. Unit</td>
-    <td><input type='text' name="myvolunit" value="<?php echo $myi_volunit; ?>"></td>
-  </tr>
+    <tr>
+      <td>Vol. Unit</td>
+      <td><input type='text' name="myvolunit" value="<?php echo $myi_volunit; ?>"></td>
+    </tr>
 
-  <tr>
-    <td>Qty</td>
-    <td><input type='text' name="myqty" value="<?php echo $myi_qty; ?>"></td>
-  </tr>
+    <tr>
+      <td>Qty</td>
+      <td><input type='text' name="myqty" value="<?php echo $myi_qty; ?>"></td>
+    </tr>
 
-  <tr>
-    <td>QTY Min</td>
-    <td><input type='text' name="myqtymin" value="<?php echo $myi_qtymin; ?>"></td>
-  </tr>
-  <tr>
-    <td>Satuan</td>
-    <td><input type='text' name="myunit" value="<?php echo $myi_unit; ?>"></td>
-  </tr>
+    <tr>
+      <td>QTY Min</td>
+      <td><input type='text' name="myqtymin" value="<?php echo $myi_qtymin; ?>"></td>
+    </tr>
+    <tr>
+      <td>Satuan</td>
+      <td><input type='text' name="myunit" value="<?php echo $myi_unit; ?>"></td>
+    </tr>
 
-   <tr>
-    <td>HPP</td>
-    <td><input type='text' name="mycogs" value="<?php echo $myi_cogs; ?>"></td>
-  </tr>
+    <tr>
+      <td>HPP</td>
+      <td><input type='text' name="mycogs" value="<?php echo $myi_cogs; ?>"></td>
+    </tr>
 
-  <tr>
-    <td>Harga Jual #1</td>
-    <td><input type='text' name="mysell" value="<?php echo $myi_sell; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #2</td>
-    <td><input type='text' name="mysell2" value="<?php echo $myi_sell2; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #3</td>
-    <td><input type='text' name="mysell3" value="<?php echo $myi_sell3; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #4</td>
-    <td><input type='text' name="mysell4" value="<?php echo $myi_sell4; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #5</td>
-    <td><input type='text' name="mysell5" value="<?php echo $myi_sell5; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #6</td>
-    <td><input type='text' name="mysell6" value="<?php echo $myi_sell6; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #7</td>
-    <td><input type='text' name="mysell7" value="<?php echo $myi_sell7; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #8</td>
-    <td><input type='text' name="mysell8" value="<?php echo $myi_sell8; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #9</td>
-    <td><input type='text' name="mysell9" value="<?php echo $myi_sell9; ?>"></td>
-  </tr>
-  <tr>
-    <td>Harga Jual #10</td>
-    <td><input type='text' name="mysell10" value="<?php echo $myi_sell10; ?>"></td>
-  </tr>
+    <tr>
+      <td>Harga Jual #1</td>
+      <td><input type='text' name="mysell" value="<?php echo $myi_sell; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #2</td>
+      <td><input type='text' name="mysell2" value="<?php echo $myi_sell2; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #3</td>
+      <td><input type='text' name="mysell3" value="<?php echo $myi_sell3; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #4</td>
+      <td><input type='text' name="mysell4" value="<?php echo $myi_sell4; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #5</td>
+      <td><input type='text' name="mysell5" value="<?php echo $myi_sell5; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #6</td>
+      <td><input type='text' name="mysell6" value="<?php echo $myi_sell6; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #7</td>
+      <td><input type='text' name="mysell7" value="<?php echo $myi_sell7; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #8</td>
+      <td><input type='text' name="mysell8" value="<?php echo $myi_sell8; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #9</td>
+      <td><input type='text' name="mysell9" value="<?php echo $myi_sell9; ?>"></td>
+    </tr>
+    <tr>
+      <td>Harga Jual #10</td>
+      <td><input type='text' name="mysell10" value="<?php echo $myi_sell10; ?>"></td>
+    </tr>
 
-  <tr>
-    <td>Kode Jual</td>
-    <td><input type='text' name="mykdsell" value="<?php echo $mykd_sell; ?>"></td>
-  </tr>
+    <tr>
+      <td>Kode Jual</td>
+      <td><input type='text' name="mykdsell" value="<?php echo $mykd_sell; ?>"></td>
+    </tr>
 
-  <tr>
-    <td>Status</td>
-    <td><input type='text' name="mystatus" value="<?php echo $myi_status; ?>"></td>
-  </tr>
+    <tr>
+      <td>Status</td>
+      <td><input type='text' name="mystatus" value="<?php echo $myi_status; ?>"></td>
+    </tr>
+    <tr>
+      <td>Catatan</td>
+      <td><textarea name="txtcatatan" rows="10" cols="30" ><?php echo $myi_catatan; ?></textarea></td>
+    </tr>
+    
 
-  
+    <tr>
+      <td colspan="2"><input type='submit' value="Delete" name="delete" style="float:left;border-radius: 5px;width:120px;background-color:  #e74c3c ">
+          <input type='submit' value="Update" name="update" style="float:right;border-radius: 5px;width:120px;"></td>
+    </tr>
 
-   <tr>
-    <td><input type='submit' value="Delete" name="delete" style="float:left;border-radius: 5px;width:120px;background-color:  #e74c3c "></td>
-    <td><input type='submit' value="Update" name="update" style="float:right;border-radius: 5px;width:120px;"></td>
-  </tr>
+    <tr>
+      <td style="padding-top:20px;"><a href="reginvent.php">Back</a></td>
+    </tr>
 
-  <tr>
-    <td><a href="reginvent.php">Back</a></td>
-  </tr>
-
-</table>
-</form>
+  </table>
+  </form>
+</div>
 </body>
 </html>
 
@@ -293,6 +313,7 @@ if (isset($_POST['update']))
   $mysell10     = $_POST['mysell10'];
   $mystatus     = $_POST['mystatus'];
   $mywareid     = $_POST['myware'];
+  $myi_catatan  = $_POST['txtcatatan'];
   //$myimage=$_POST['myimage'];
 
   include ('class/_parkerconnection.php');
@@ -305,6 +326,12 @@ if (isset($_POST['update']))
                 //$stmt->bindParam(':i_code', $codeinvent, PDO::PARAM_STR);
                 $stmt->execute();
                 $total = $stmt->rowCount();
+
+                $sqlupdateremark = "UPDATE price_remark SET rem01='$myi_catatan' WHERE item_code='$mycode'";
+                $stmtupdateremark = $pdo->prepare($sqlupdateremark);
+                //$stmt->bindParam(':i_code', $codeinvent, PDO::PARAM_STR);
+                $stmtupdateremark->execute();
+                $totalupdatereamark = $stmtupdateremark->rowCount();
                 $msg="Data Updated";
                 echo "<script type='text/javascript'>alert('$msg');</script>";
             } catch(PDOException $e) {

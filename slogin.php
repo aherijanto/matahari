@@ -138,7 +138,7 @@ if (isset($_POST['xlogin'])) {
             <form action="" method="post">
             <div class="form-outline mb-4 mt-4">
               <input type="text" id="typeEmailX-2" name="username" class="form-control form-control-lg" />
-              <label class="form-label" for="typeEmailX-2">Username</label>
+              <label class="form-label" for="typeEmailX-2">Username ssss</label>
             </div>
 
             <div class="form-outline mb-4">

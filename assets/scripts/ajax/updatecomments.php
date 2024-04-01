@@ -2,10 +2,10 @@
 	session_start();
 	date_default_timezone_set("Asia/Jakarta");
 
-	/*require_once('../../requires/config.php');
+	/*require_once('../../requires/config.php');//
 	require_once('../../requires/fungsi.php');*/
 
-	if($_POST["id"]) {
+	if($_POST["id"]) {//
 
 		$itemcode = $_POST["id"];
         $comment = $_POST['comment'];

@@ -40,6 +40,7 @@
     $i_sell10   = $_POST['isell10'];
 		$i_status   = $_POST['istatus'];
     $i_wareid   = $_POST['slctwarehouse'];
+    $comment    = $_POST['txtcatatan'];
 	
 
 		if ($i_code == '') {
@@ -52,6 +53,7 @@
     $i_status,$i_wareid);
 		//$mycustomer->set_c_code($c_code);
 		$myinvent->save_inventory();
+    $myinvent->save_comment($comment);
   }
 
 
@@ -130,7 +132,7 @@
     <style>
       @font-face {
                 font-family: code39;
-                src: url(barcode/Code39Azalea.ttf);
+                src: url(barcode/Code39Azalea.ttf);}
     </style>
   </head>
 
@@ -406,16 +408,18 @@
 
 
 		<tr>
-        <td colspan="2">Status</td>
+        <td>Status</td>
+        <td>Catatan</td>
     </tr>
 
     <tr>
-        <td colspan="2"><input type="text" value="A" name="istatus" placeholder="Type here..." /></td>
+        <td><input type="text" value="A" name="istatus" placeholder="Type here..." /></td>
+        <td><textarea id="txtcatatan" name="txtcatatan" rows="10" cols="30"></textarea></td>
     </tr>
 
     <tr>
         <td colspan="2" align="right">
-          <input type="submit" name="saveinvent" value="Save Data" />
+          <input type="submit" id="saveinvent" name="saveinvent" value="Save Data" />
         </td>
     </tr>
 
@@ -510,6 +514,7 @@ if(isset($_POST['sub_search'])){
 </div>
 </div>
 </body>
+<script src="./assets/scripts/js/reginvent.js"></script>
 </html>
 <?php
 }else { echo 'Process cannot continue, please <a href="slogin.php">Login </a>';}
