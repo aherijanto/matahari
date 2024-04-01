@@ -428,15 +428,12 @@ tr:nth-child(even) {
 
 
 			<?php
-
 				include ('class/_parkerconnection.php');
-
 					$group_param='c_code';
-
 					try
 					{
 							$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							$sql = "SELECT * FROM wsuppliers ORDER BY s_code";
+							$sql = "SELECT * FROM wsuppliers ORDER BY s_name ASC;";
 							$stmt = $pdo->prepare($sql);
 							//$stmt->bindParam(':c_order', $group_param, PDO::PARAM_STR);
 							$stmt->execute();
