@@ -2,7 +2,7 @@
 -- version 5.0.4deb2+deb11u1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
+-- Host: 103.247.8.177:3306
 -- Generation Time: Jul 18, 2022 at 09:00 PM
 -- Server version: 10.5.15-MariaDB-0+deb11u1
 -- PHP Version: 7.4.30

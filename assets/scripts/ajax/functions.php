@@ -5,7 +5,7 @@ $pwd = 'myroot@@##';
 
 try 
 {
-	$pdo = new PDO('mysql:host=localhost;dbname='.$db, $user, $pwd);
+	$pdo = new PDO('mysql:host=103.247.8.177;dbname='.$db, $user, $pwd);
     
 }
 catch (PDOException $e) 

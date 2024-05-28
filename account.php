@@ -5,7 +5,7 @@
   //header("Location: home.php");
 // }
  
-$conn = mysqli_connect('localhost','root','root');
+$conn = mysqli_connect('103.247.8.177','root','root');
  $dbfound=mysql_select_db('cappadskin');
  $error = false;
 

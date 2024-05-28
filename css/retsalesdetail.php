@@ -42,7 +42,7 @@ if(!empty($_GET['invtext'])){
 }
 	try
        {
-         $pdo = new PDO('mysql:host=localhost;dbname=utama', 'root', 'root');
+         $pdo = new PDO('mysql:host=103.247.8.177;dbname=utama', 'root', 'root');
 
        }
        catch (PDOException $e)

@@ -57,8 +57,8 @@ if(!empty($_GET["action"]))
         }     
 
       }
-      echo '<script> window.open("http://localhost/medownload.php","_self");</script>';
-      //header('Location: http://localhost/medownload.php');
+      echo '<script> window.open("http://103.247.8.177/medownload.php","_self");</script>';
+      //header('Location: http://103.247.8.177/medownload.php');
 			break;
 			
 		case "remove":
@@ -390,7 +390,7 @@ if(!empty($_GET["action"]))
 
             try
        		{
-         		$pdo = new PDO('mysql:host=localhost;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
+         		$pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
 
        		}
        		catch (PDOException $e)
@@ -423,7 +423,7 @@ if(!empty($_GET["action"]))
             //$mname= '%'.$i_name.'%';
             	try
        			{
-         			$pdo = new PDO('mysql:host=localhost;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
+         			$pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
 
        			}
        				catch (PDOException $e)

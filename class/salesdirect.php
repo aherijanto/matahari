@@ -50,7 +50,7 @@ function promoDoremi($itempromo,$myqty,$mysell,$disc01,$disc02,$disc03)
 
 				try
        			{
-         			$pdo = new PDO('mysql:host=localhost;dbname=doremi', 'root', 'root');
+         			$pdo = new PDO('mysql:host=103.247.8.177;dbname=doremi', 'root', 'root');
 
        			}
        				catch (PDOException $e)
@@ -190,7 +190,7 @@ if(!empty($_GET["action"]))
             	$i_code=$_POST['itemcode'];
             	try
        			{
-         			$pdo = new PDO('mysql:host=localhost;dbname=utama', 'root', 'root');
+         			$pdo = new PDO('mysql:host=103.247.8.177;dbname=utama', 'root', 'root');
 
        			}
        			catch (PDOException $e)
@@ -783,7 +783,7 @@ $totItem=0;
             //$mname= '%'.$i_name.'%';
             	try
        			{
-         			$pdo = new PDO('mysql:host=localhost;dbname=utama', 'root', 'root');
+         			$pdo = new PDO('mysql:host=103.247.8.177;dbname=utama', 'root', 'root');
 
        			}
        				catch (PDOException $e)

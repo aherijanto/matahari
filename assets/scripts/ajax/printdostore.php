@@ -4,7 +4,7 @@ ini_set("display_errors","On");
 session_start();
     if(isset($_GET['noinv'])){
         $noinv = $_GET['noinv'];
-        $conn=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+        $conn=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
         $warehousequery = "select * from wwarehouse";
         $showwarehouse = mysqli_query($conn,$warehousequery);
         while($rowresult = mysqli_fetch_array($showwarehouse)){

@@ -2,7 +2,7 @@
 -- version 4.6.6deb4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
+-- Host: 103.247.8.177:3306
 -- Generation Time: Mar 30, 2019 at 03:16 PM
 -- Server version: 10.1.37-MariaDB-0+deb9u1
 -- PHP Version: 7.0.33-0+deb9u3

@@ -3,7 +3,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set("display_errors","On");
 if (isset($_SESSION['user'])!="" ){
-include 'class/_parkercustomer.php';
+  require_once('class/_parkercustomer.php');
 
 ?>
 

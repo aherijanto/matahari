@@ -13,7 +13,7 @@ function getPurchaseHead($inv)
 {
 	try
        {
-         $pdo = new PDO('mysql:host=localhost;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
+         $pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
 
        }
        catch (PDOException $e)
@@ -59,7 +59,7 @@ if (!empty($_GET['invno']))
   $psupp=$_SESSION['psupp'];
 	try
        {
-         $pdo = new PDO('mysql:host=localhost;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
+         $pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
 
        }
        catch (PDOException $e)
@@ -161,7 +161,7 @@ tr:nth-child(even) {
         
            try
             {
-               $pdo1 = new PDO('mysql:host=localhost;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
+               $pdo1 = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_utama', 'mimj5729_myroot', 'myroot@@##');
 
             } 
              catch (PDOException $e)
@@ -245,7 +245,7 @@ tr:nth-child(even) {
   </tr>
   
   <tr>
-    <td colspan="6" align="right"><a href="http://localhost/medownload.php" style="text-decoration:none;background-color:#2ecc71;color:white;border-radius: 5px;width: 150px;height: 50px;padding: 8px;">Next</a></td>
+    <td colspan="6" align="right"><a href="http://103.247.8.177/medownload.php" style="text-decoration:none;background-color:#2ecc71;color:white;border-radius: 5px;width: 150px;height: 50px;padding: 8px;">Next</a></td>
   </tr>
 
 </table>

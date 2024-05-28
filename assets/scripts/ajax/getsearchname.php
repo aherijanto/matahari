@@ -7,7 +7,7 @@
     if($_POST["name"]){
 
 		$name=$_POST["name"];
-		$conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+		$conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 
 			$result = mysqli_query($conn2,"select * from winventory where i_name like '%$name%';");
             $jumrec = mysqli_num_rows($result);

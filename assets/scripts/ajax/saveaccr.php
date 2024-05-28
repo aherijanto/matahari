@@ -14,7 +14,7 @@ if(!empty($_SESSION["accr"])){
         $mynocheque=$myItem['mynocheque'];//$_POST['change'];
         $myamount = $myItem['myamount'];
 	 	// 
-		 $conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+		 $conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
          $result = mysqli_query($conn2,"insert into waccountr(s_code, r_date,r_type,r_nocheque, r_amount) values ('$myinvno', '$mydate','$mytype','$mynocheque','$myamount');");
         
          if($result){

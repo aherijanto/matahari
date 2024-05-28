@@ -11,6 +11,6 @@
 [11-Aug-2021 02:47:54 UTC] PHP Parse error:  syntax error, unexpected 'ary' (T_STRING) in /home/kliz7334/public_html/registrasi/assets/scripts/ajax/getcust.php on line 34
 [11-Aug-2021 02:49:22 UTC] PHP Parse error:  syntax error, unexpected 'ary' (T_STRING) in /home/kliz7334/public_html/registrasi/assets/scripts/ajax/getcust.php on line 34
 [11-Aug-2021 02:49:35 UTC] PHP Parse error:  syntax error, unexpected 'ary' (T_STRING) in /home/kliz7334/public_html/registrasi/assets/scripts/ajax/getcust.php on line 34
-[11-Aug-2021 10:07:44 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'ary'@'localhost' (using password: YES) in /home/kliz7334/public_html/registrasi/assets/scripts/ajax/deletecust.php on line 13
+[11-Aug-2021 10:07:44 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'ary'@'103.247.8.177' (using password: YES) in /home/kliz7334/public_html/registrasi/assets/scripts/ajax/deletecust.php on line 13
 [11-Aug-2021 10:07:44 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/kliz7334/public_html/registrasi/assets/scripts/ajax/deletecust.php on line 14
 [11-Aug-2021 15:08:53 Asia/Jakarta] PHP Notice:  Undefined index: doc_id in /home/kliz7334/public_html/registrasi/assets/scripts/ajax/getpoli.php on line 40

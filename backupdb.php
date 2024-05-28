@@ -1,6 +1,6 @@
 <?php
 //MySQL server and database
-$dbhost = 'localhost';
+$dbhost = '103.247.8.177';
 $dbuser = 'mimj5729_myroot';
 $dbpass = 'myroot@@##';
 $dbname = 'mimj5729_matahari';

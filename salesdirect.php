@@ -139,7 +139,7 @@ if($_GET['tag']=='edit'){
 								if (isset($_GET['c_code'])) {
 									$custid = $_GET['c_code'];
 								}
-								$conn = mysqli_connect('localhost', 'mimj5729_myroot', 'myroot@@##', 'mimj5729_matahari');
+								$conn = mysqli_connect('103.247.8.177', 'mimj5729_myroot', 'myroot@@##', 'mimj5729_matahari');
 								$custquery = "select * from wcustomers where c_code='$custid'";
 								$showcustname = mysqli_query($conn, $custquery);
 								$rowcust = mysqli_fetch_array($showcustname);
@@ -153,7 +153,7 @@ if($_GET['tag']=='edit'){
 							if (isset($_GET['c_code'])) {
 								$custid = $_GET['c_code'];
 							}
-							$conn = mysqli_connect('localhost', 'mimj5729_myroot', 'myroot@@##', 'mimj5729_matahari');
+							$conn = mysqli_connect('103.247.8.177', 'mimj5729_myroot', 'myroot@@##', 'mimj5729_matahari');
 							$custquery = "select * from wcustomers where c_code='$custid'";
 							$showcustname = mysqli_query($conn, $custquery);
 							$rowcust = mysqli_fetch_array($showcustname);
@@ -211,7 +211,7 @@ if($_GET['tag']=='edit'){
 	</div>
 
 	<div class="modal" id="PriceModal" tabindex="-1" data-backdrop="false" role="dialog">
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog modal-md" role="document">
 			<div class="modal-content">
 
 				<div class="modal-header">
@@ -326,7 +326,7 @@ if($_GET['tag']=='edit'){
 						</div>
 						<div class="row">
 							<label class="control-label" style="margin-left:10px;margin-top:5px;">Comments:</label>
-							<textarea id="commentharga1" class="form-control input-sm" rows="5" cols="30" style="width:200px;margin-top:5px;margin-left:20px;resize:none;" readonly></textarea>
+							<textarea id="commentharga1" class="form-control input-sm" rows="5" cols="200" style="width:200px;margin-top:5px;margin-left:20px;resize:none;" readonly></textarea>
 						</div>
 
 

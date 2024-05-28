@@ -36,7 +36,7 @@ $pwd=trim($conf[2]);
 
 try 
 {
-	$pdo = new PDO('mysql:host=localhost;dbname='.$db, $user, $pwd);
+	$pdo = new PDO('mysql:host=103.247.8.177;dbname='.$db, $user, $pwd);//103.247.8.177//103.247.8.177
     
 }
 catch (PDOException $e) 

@@ -118,7 +118,7 @@ if (isset($_POST['datesubmit'])) {
 			$subtotalafter = $mysubtotal - ($rowpcsGlob1->i_qty * $rowpcsGlob1->i_disc3);
             $grandtotal = $grandtotal + $subtotalafter;
 
-            $conn=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+            $conn=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
             $sqlsatuan="SELECT * from winventory where i_barcode='$myi_code'";
               $showsatuan= mysqli_query($conn,$sqlsatuan) or die(mysqli_error($conn));
               if ($row1 =mysqli_fetch_array($showsatuan))

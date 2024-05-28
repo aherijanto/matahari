@@ -16,7 +16,7 @@
         $loc = htmlspecialchars($_POST['loc']);
         
        if ($flag=='new'){
-			$conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+			$conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 			$result = mysqli_query($conn2,"insert into wwarehouse (ware_id, ware_name, ware_loc) values ('$wareid', '$nama','$loc');");
             
 			if($result){
@@ -28,7 +28,7 @@
         }
     
         else{
-            $conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+            $conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
             $result=mysqli_query($conn2,"update warehouse set ware_id='$wareid',ware_name='$nama',ware_loc = '$loc' where ware_id='$wareid';");
             
             if($result){

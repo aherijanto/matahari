@@ -14,7 +14,7 @@ require_once('./assets/requires/headerdshbd.php');
 <body class="container">
     <div style="padding-top:40px;color:#7209b7;font-size:32px;">DASHBOARD</div>
     <div style="padding-top:10px;color:#1e6091;font-size:20px;"><?php echo 'WELCOME, ' . $_SESSION['user']; ?> </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="border-style:none;border-color:blue;border-radius:15px 15px;">
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="border-style:none;border-color:blue;border-radius:15px 15px;">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -38,7 +38,7 @@ require_once('./assets/requires/headerdshbd.php');
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
+    </div> -->
     <div class="card-deck" style="padding-top:20px;">
         <div class="card">
             <!-- <img class="card-img-top" src="..." alt="Card image cap">!-->

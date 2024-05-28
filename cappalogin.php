@@ -2,7 +2,7 @@
 
  session_start();
  //require_once 'dbconnect.php';
- $conn = mysql_connect('localhost','root','root');
+ $conn = mysql_connect('103.247.8.177','root','root');
  $dbfound=mysql_select_db('cappadskin');
  
  // it will never let you open index(login) page if session is set

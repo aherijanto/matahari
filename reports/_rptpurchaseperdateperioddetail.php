@@ -109,7 +109,7 @@ if (isset($_POST['datesubmit'])) {
         echo '<table width="100%"> <tr>';
         echo '<td width="20%">' . $bcode . '</td><td width="20%">' . $refno . '</td><td width="30%">' .  $sname . '</td><td width="20%">' . date('d-m-Y', strtotime($date1)) . '</td><td width="20%">' . date('d-m-Y', strtotime($duedate)) . '</td>';
         echo '</tr></table>';
-        $conn=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+        $conn=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
         echo '<table width="100%" class="mf">';
         while ($rowpcsGlob1 = $stmtpcsGlob1->fetchObject()) {
             $myi_code = $rowpcsGlob1->i_code;

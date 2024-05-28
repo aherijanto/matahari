@@ -28,7 +28,7 @@
             echo ' - Unknown error';
         break;
     }
-    $host='localhost';
+    $host='103.247.8.177';
     $user = 'mimj5729_myroot';
     $pwd = 'myroot@@##';
     $db = 'mimj5729_matahari';

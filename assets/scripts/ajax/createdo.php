@@ -3,7 +3,7 @@
     date_default_timezone_set('Asia/Jakarta');
     $wareid=$_GET['wareid'];
     $noinv=$_GET['noinv'];
-    $conn=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+    $conn=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
     $warehousequery = "select * from wwarehouse where ware_id='$wareid'";
     $showwarehouse = mysqli_query($conn,$warehousequery);
     $rowware = mysqli_fetch_array($showwarehouse);

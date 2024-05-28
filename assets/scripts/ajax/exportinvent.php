@@ -2,18 +2,18 @@
     session_start();
     error_reporting(E_ALL);
     ini_set("display_errors","On");
-
+    
     // if(isset($_POST['submit'])){
-         
-            $DB_Server = "localhost";   
+            $datenow = date('Ymd-His');
+            $DB_Server = "103.247.8.177";   
             $DB_Username = "mimj5729_myroot";   
             $DB_Password = "myroot@@##";               
             $DB_DBName = "mimj5729_matahari";          
             $DB_TBLName = "winventory";  
-            $filename = "inventory";         
+            $filename = "inventory".$datenow;         
 
             //create MySQL connection   
-            $sql = "SELECT * FROM winventory";
+            $sql = "SELECT * FROM winventory LEFT JOIN price_remark ON winventory.i_code = price_remark.item_code";
 
             $Connect = mysqli_connect($DB_Server, $DB_Username, $DB_Password) or die("Couldn't connect to MySQL:<br>" . mysqli_error($Connect) . "<br>" . mysqli_errno($Connect));
 
@@ -26,7 +26,7 @@
             $file_ending = "xls";
 
             $columns=array('itemcode','group','suppcode','barcode','itemname','qty','volume','volume unit','qty min','unit','remark1','remark2','remark3','remark4','cogs','sell code','price1','price2','price3','price4','price5','price6','price7','price8','price9','price10','status',
-            'ware id','id');
+            'ware id','comments','id'); //remove title id
             $sep = "\t"; //tabbed character
 
             //start of printing column names as names of MySQL fields
@@ -34,8 +34,7 @@
             
             //end of printing column names  
             $merge=[];
-            unset($_SESSION['invent']);
-            $_SESSION['invent'] = '';
+            $_SESSION['inventory']=array();
 
         //start while loop to get data
             while($row = mysqli_fetch_array($result))
@@ -59,7 +58,9 @@
                     'status'=>$row['i_status'],
                     'wareid'=>$row['ware_id'],
                     'tag'=>$row['tag'],
-                    'id'=>$row['id'],
+                    'comments'=>$row['rem01'], // adding 'comments column'
+                    'id'=>'Do not modified',
+                    //'id'=>$row['id'],
                     ));
                     
                 $schema_insert = "";
@@ -110,6 +111,7 @@
                     echo(trim($item['price10'])."\t");
                     echo(trim($item['status'])."\t");
                     echo(trim($item['wareid'])."\t");
+                    echo(($item['comments'])."\t");
                     echo(trim($item['id'])."\t");
                     // echo($item['tag']);
                     echo "\n";
@@ -118,7 +120,7 @@
             }else{
                 echo 'Data Not Found';
             }
-            unset($_SESSION['inventory']);
+           
             return;    
 ?>
 

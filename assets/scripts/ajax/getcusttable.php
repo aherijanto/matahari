@@ -11,7 +11,7 @@
 
 		try 
 		{
-			$pdo = new PDO('mysql:host=localhost;dbname=poltek', 'ary', 'ary');
+			$pdo = new PDO('mysql:host=103.247.8.177;dbname=poltek', 'ary', 'ary');
 		}
 		catch (PDOException $e) 
 		{

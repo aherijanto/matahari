@@ -16,7 +16,7 @@ function getPurchaseHead($inv)
 {
 	try
        {
-         $pdo = new PDO('mysql:host=localhost;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
+         $pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
 
        }
        catch (PDOException $e)
@@ -55,7 +55,7 @@ if (!empty($_GET['invno']))
   $psupp=$_SESSION['psupp'];
 	try
        {
-         $pdo = new PDO('mysql:host=localhost;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
+         $pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
 
        }
        catch (PDOException $e)
@@ -142,7 +142,7 @@ tr:nth-child(even) {
 </table>
 
 <?php 
-  $conn=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+  $conn=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 	 try {
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT * FROM wbuytail WHERE b_code = '$invno' ORDER BY g_code ASC;";

@@ -2796,7 +2796,7 @@ Stack trace:
 [06-Jan-2021 15:37:04 Asia/Jakarta] PHP Notice:  Undefined variable: error in /home/mimj5729/public_html/sbk-brebes/slogin.php on line 45
 [06-Jan-2021 15:37:12 Asia/Jakarta] PHP Notice:  Undefined variable: error in /home/mimj5729/public_html/sbk-brebes/slogin.php on line 45
 [18-Feb-2021 13:14:39 Asia/Jakarta] PHP Notice:  Undefined variable: error in /home/mimj5729/public_html/sbk-brebes/slogin.php on line 45
-[18-Feb-2021 13:14:52 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/mimj5729/public_html/sbk-brebes/account.php on line 8
+[18-Feb-2021 13:14:52 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'103.247.8.177' (using password: YES) in /home/mimj5729/public_html/sbk-brebes/account.php on line 8
 [18-Feb-2021 13:14:52 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function mysql_select_db() in /home/mimj5729/public_html/sbk-brebes/account.php:9
 Stack trace:
 #0 {main}

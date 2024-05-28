@@ -39,7 +39,7 @@ $userInv=$_SESSION['user'];
 $payme=0;
 $changeme=0;
 
-$conn3=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+$conn3=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 //mysqli_select_db('inventory');
 
 echo '<table width="100%">';

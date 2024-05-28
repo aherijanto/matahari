@@ -169,7 +169,7 @@ if (isset($_POST['datesubmit'])) {
             $disc3 = $rowpcsGlob1->i_disc2;
             $mysubtotal = $i_qty * $i_price;
             $mykdbrg = $rowpcsGlob1->i_code;
-            $conn=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+            $conn=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
             $sqlsatuan="SELECT * from winventory,wwarehouse where i_code='$mykdbrg' and winventory.ware_id=wwarehouse.ware_id;";
 	
 	        $showsatuan= mysqli_query($conn,$sqlsatuan) or die(mysqli_error($conn));

@@ -31,7 +31,7 @@ $userInv=$_SESSION['user'];
 $payme=0;
 $changeme=0;
 
-$conn3=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+$conn3=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 $sqlcompany="SELECT * FROM wcompany;";
 $showcompany= mysqli_query($conn3,$sqlcompany) or die(mysqli_error($conn3));
 $rowcompany = mysqli_fetch_array($showcompany);
@@ -41,7 +41,7 @@ $addr2 = $rowcompany['address2'];
 $city = $rowcompany['city'];
 
 $phone = $rowcompany['phone'];
-$conn_cust=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+$conn_cust=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 $custquery = "select * from wsellhead,wcustomers where wsellhead.s_code = '$myinvno1' and wsellhead.c_code = wcustomers.c_code";
 
 

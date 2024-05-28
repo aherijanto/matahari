@@ -27,7 +27,7 @@ if(!empty($_SESSION["cart_item"])){
 		$mydateon=$_POST['duedate'];
 	 }
 	 	
-     $conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+     $conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 	 $tag = $_POST['tag'];
 	 
 	 switch ($tag) {
@@ -81,10 +81,10 @@ if(!empty($_SESSION["cart_item"])){
 		$iqty = 0;
 		$balance = 0;
 	 	// 
-		 $conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+		 $conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 		 $result = mysqli_query($conn2,"insert into wselltail (s_code,i_code,i_name, i_qty, i_sell,i_disc1,i_disc2,i_disc3) values ('$myInvNo', '$myItemCode','$myItemName', '$myQty','$myPrice','$myDisc1', '$myDisc2','$myDisc3');");
 
-		 //$connDB = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+		 //$connDB = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 		 $resultselect = mysqli_query($conn2,"select * from winventory where i_code = '$myItemCode'");
 		 $rowSelect = mysqli_fetch_array($resultselect);
 		 $iqty = $rowSelect['i_qty'];

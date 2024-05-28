@@ -6,7 +6,7 @@ date_default_timezone_set("Asia/Jakarta");
 			
 		try 
 		{
-			$pdo = new PDO('mysql:host=localhost;dbname=kliz7334_cappamed', 'kliz7334_parkerroot','parkerroot@@##');
+			$pdo = new PDO('mysql:host=103.247.8.177;dbname=kliz7334_cappamed', 'kliz7334_parkerroot','parkerroot@@##');
 		}
 		catch (PDOException $e) 
 		{

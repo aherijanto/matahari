@@ -9,7 +9,7 @@
 
 		$kdbrg = $_POST["id"];
 
-			$conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_senang');
+			$conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_senang');
 			$result = mysqli_query($conn2,"delete from mstbrg where KD_BRG = $kdbrg;");
 			if($result){
 				

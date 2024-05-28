@@ -53,7 +53,7 @@
                         if(isset($_GET['c_code'])){
                             $custid = $_GET['c_code'];
                         }
-                            $conn=mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+                            $conn=mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
                             $custquery = "select * from wcustomers where c_code='$custid'";
                             $showcustname = mysqli_query($conn,$custquery);
                             $rowcust = mysqli_fetch_array($showcustname);

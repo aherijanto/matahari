@@ -45,7 +45,7 @@
 
             			try
         					{
-        						$pdo = new PDO('mysql:host=localhost;dbname=waletmas', 'root', 'root');
+        						$pdo = new PDO('mysql:host=103.247.8.177;dbname=waletmas', 'root', 'root');
 
         					}
         					catch (PDOException $e)
@@ -104,7 +104,7 @@
 
           try
                {
-                 $pdo1 = new PDO('mysql:host=localhost;dbname=waletmas', 'root', 'root');
+                 $pdo1 = new PDO('mysql:host=103.247.8.177;dbname=waletmas', 'root', 'root');
 
                }
                catch (PDOException $e)

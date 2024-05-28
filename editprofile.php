@@ -12,7 +12,7 @@ if (isset($_SESSION['user'])!="" )
         $custcode=$_GET['c_code'];
         try
         {
-            $pdo = new PDO('mysql:host=localhost;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
+            $pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
 
         }
         catch (PDOException $e)
@@ -161,9 +161,10 @@ if (isset($_POST['update']))
   $c_kel=$_POST['c_kel'];
   $c_kec=$_POST['c_kec'];
   $c_phone=$_POST['c_phone'];
+  
   try
        {
-         $pdo = new PDO('mysql:host=localhost;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
+         $pdo = new PDO('mysql:host=103.247.8.177;dbname=mimj5729_matahari', 'mimj5729_myroot', 'myroot@@##');
        }
        catch (PDOException $e)
        {
@@ -175,7 +176,7 @@ if (isset($_POST['update']))
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "UPDATE `wcustomers` SET `c_code`='$custcode',`c_id`='$c_id',`c_name`='$fullname',`c_gender`='$c_gender',`c_pob`='$pob',`c_dob`='$dob',`c_addr`='$c_addr',`c_rt`='$c_rt',`c_kel`='$c_kel',`c_kec`='$c_kec',`c_phone`='$c_phone' WHERE `c_code`= '$custcode'";
                 $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':i_code', $custcode, PDO::PARAM_STR);
+                //$stmt->bindParam(':i_code', $custcode, PDO::PARAM_STR);
                 $stmt->execute();
                 $total = $stmt->rowCount();
 ?>

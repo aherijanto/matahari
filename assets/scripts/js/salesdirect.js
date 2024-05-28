@@ -524,7 +524,7 @@ function checkPIN(){
     } //response
   }); //ajax
 }
-//
+
 function updatecomment(x,y,z){
   $.ajax({
     type: "POST",

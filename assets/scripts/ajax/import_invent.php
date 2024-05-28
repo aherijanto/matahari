@@ -5,7 +5,7 @@
     date_default_timezone_set('Asia/Jakarta');
     require_once '../../../vendor/autoload.php';
     require_once('../../../assets/requires/config.php');
-    require_once('../../../assets/requires/header1.php');
+    //require_once('../../../assets/requires/header1.php');
     // require_once('../../../PhpSpreadsheet/Spreadsheet.php');
     // require_once('../../../PhpSpreadsheet/Reader/Xlsx.php');
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -128,7 +128,10 @@
                 case 28:
                     $ware_id = $value;
                     break;
-                case 30:
+                case 29:
+                    $comments = $value;
+                    break;
+                case 31:
                     $tag = $value;
                     break;
             }
@@ -164,11 +167,12 @@
                             'i_sell10'=>$i_sell10,
                             'i_status'=>$i_status,
                             'ware_id'=>$ware_id,
+                            'comments'=>$comments
                             );
         array_push($_SESSION['cart_item'],$itemArray);
     }
         
-    $conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+    $conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
     $countupdate=0;
     $countinsert=0;
     foreach($_SESSION['cart_item'] as $item){
@@ -201,6 +205,7 @@
             $isell10_ = $item['i_sell10'];
             $istatus_ = $item['i_status'];
             $wareid_ = $item['ware_id'];
+            $comments_ = $item['comments'];
             
 
             $searchquery = "SELECT * FROM winventory WHERE i_code LIKE '$icode_'";
@@ -240,11 +245,17 @@
                                            
                                         WHERE `i_code` LIKE '$icode_'";
 
+                    $update_comments = "UPDATE price_remark
+                                            SET `rem01`='$comments_'
+                                            WHERE `item_code` LIKE '$icode_'";
+
                     $resultUpdate = mysqli_query($conn2,$update_query_);
+                    $resultcomments = mysqli_query($conn2,$update_comments);
                     
                     if($resultUpdate){
                         $countupdate++;
                     }
+                    echo $update_query_.'<br/>';
                 }
 
                 if($totalrows == 0){
@@ -309,10 +320,16 @@
                                             '$istatus_',
                                             '$wareid_'
                                             )";
+
+                    $insert_comments = "INSERT INTO price_remark (item_code,rem01,rem02,rem03,rem04,rem05,rem06,rem07,rem08,rem09,rem10) VALUES ('$icode_','$comments_','0','0','0','0','0','0','0','0','0')";
+
                     $resultInsert = mysqli_query($conn2,$insert_query_);
+                    $resultcomments = mysqli_query($conn2,$insert_comments);
+
                     if($resultInsert){
                         $countinsert++;
                     }
+                    echo $insert_query_.'<br/>';
                 }
             }        
     }

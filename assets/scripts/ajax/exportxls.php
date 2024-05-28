@@ -8,7 +8,7 @@
             $date1=$_GET['mydate1'];
             $date2=$_GET['mydate2'];
          
-            $DB_Server = "localhost";   
+            $DB_Server = "103.247.8.177";   
             $DB_Username = "mimj5729_myroot";   
             $DB_Password = "myroot@@##";               
             $DB_DBName = "mimj5729_matahari";          

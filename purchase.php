@@ -16,12 +16,8 @@ include 'class/number.php';
 $itemcode1="";
 //$t_cust="";
 
-
-
 //$db_handle = new DBController();
 $item_total = 0;
-
-
 
 if (isset($_SESSION["scode"])){
 	$_SESSION["scode"]=$_SESSION['scode'];
@@ -47,10 +43,7 @@ if(!empty($_GET["action"]))
 				unset($_SESSION["xdate"]);
 				unset($_SESSION["scode"]);
 				unset($_SESSION["invno"]);
-
-
 			$_SESSION["xdate"]=date('Y-m-d');
-
 			$_SESSION["invdue"]=date('Y-m-d');
 			$_SESSION["myrefno"]='';
 			$_SESSION["myinvno"]='';
@@ -411,52 +404,59 @@ tr:nth-child(even) {
 				$_SESSION['myrefno']=$_POST['myrefno'];
 			}
 		?>
+		<div id="searchpcs">
+			<form action="" method="post">
+				<div style="margin-top:5px;margin-left:10px;">
+					<label>Search</label>
+					<input type="text" id="txtpcssearch" name="txtpcssearch" placeholder="No Invoice">
+					<span>
+						<input type="submit" style="color:white;background-color:#3a86ff;border-style:none;border-radius:5px;padding:10px;" name="btnsearchpcs" id="btnsearchpcs" value="Find Invoice">
+					</span>
+				</div>
+			</form>
+		</div>
 
 		<table width="100%" font="calibri">
 		<th>INVOICE NO</th><th>REFERENCE NO</th><th>INVOICE DATE</th><th>DUE DATE</th><th>SUPPLIER</th>
 		<tr>
 			<td align="center"><input type="text" name="invno" value="<?php echo $_SESSION['myinvno']; ?>"  readonly/></td>
 
-			<td align="center"><input type="text" name="myrefno" onblur="this.form.submit();" value="<?php echo $_SESSION['myrefno']; ?>" /></td>
-
-
-
-			<td align="center"><input type="date" name="invdate" id="invdate" onchange="this.form.submit();" value="<?php echo $_SESSION['xdate']; ?>" /></td>
-
-
-			<td align="center"><input type="date" name="invdue"  id="invdue" onchange="this.form.submit();" value="<?php echo $_SESSION['invdue']; ?>"/></td>
-
-
-			<?php
-				include ('class/_parkerconnection.php');
-					$group_param='c_code';
-					try
-					{
-							$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-							$sql = "SELECT * FROM wsuppliers ORDER BY s_name ASC;";
-							$stmt = $pdo->prepare($sql);
-							//$stmt->bindParam(':c_order', $group_param, PDO::PARAM_STR);
-							$stmt->execute();
-							$total = $stmt->rowCount();
-					} catch(PDOException $e) {
-								echo $e->getMessage();
-						}
-
-				echo '<td align="center"><select name="mysupp" id="mysupp" onchange="this.form.submit();" >
-				<option value=""  disabled selected> Select Supplier...</option>';
-
-				while ($row = $stmt->fetchObject()) {
-							//echo $row->c_code;
-							$mycode=$row->s_code;
-				?>
-							<option value="<?php echo $mycode ?>" <?php if( $mycode == $_SESSION['scode'] ): ?>  selected="selected" <?php endif;?>><?php echo $row->s_name ?></option>
+			<form method="post" action="">
+				<td align="center"><input type="text" name="myrefno" onblur="this.form.submit();" onchange="this.form.submit();" value="<?php echo $_SESSION['myrefno']; ?>" /></td>
+				<td align="center"><input type="date" name="invdate" id="invdate" onchange="this.form.submit();" value="<?php echo $_SESSION['xdate']; ?>" /></td>
+				<td align="center"><input type="date" name="invdue"  id="invdue" onchange="this.form.submit();" value="<?php echo $_SESSION['invdue']; ?>"/></td>
+			
 				<?php
-					 }
-					echo '</td>';
-				?>
+					include ('class/_parkerconnection.php');
+						$group_param='c_code';
+						try
+						{
+								$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+								$sql = "SELECT * FROM wsuppliers ORDER BY s_name ASC;";
+								$stmt = $pdo->prepare($sql);
+								//$stmt->bindParam(':c_order', $group_param, PDO::PARAM_STR);
+								$stmt->execute();
+								$total = $stmt->rowCount();
+						} catch(PDOException $e) {
+									echo $e->getMessage();
+							}
+					echo '<form action="" method="post">';
+					echo '<td align="center"><select name="mysupp" id="mysupp" onchange="this.form.submit();" >
+					<option value=""  disabled selected> Select Supplier...</option>';
+
+					while ($row = $stmt->fetchObject()) {
+								//echo $row->c_code;
+								$mycode=$row->s_code;
+					?>
+								<option value="<?php echo $mycode ?>" <?php if( $mycode == $_SESSION['scode'] ): ?>  selected="selected" <?php endif;?>><?php echo $row->s_name ?></option>
+					<?php
+						}
+						echo '</td>';
+					?>
+			</form>
 		</tr>
 		</table>
-		</form>
+	</form>
 		<br/>
 		<div class="txt-heading"><a id="btnNew" href="/purchase.php?action=new" style="color:white;background-color:   #2874a6   ; border-radius: 5px;text-decoration: none;padding: 10px">New</a>     <a id="btnEmpty" href="/purchase.php?action=save" style="color:white;background-color: #229954; border-radius: 5px;text-decoration: none;padding: 10px">Save</a> <a id="btnEmpty" href="/purchase.php?action=empty" style="color:white;background-color:  #cb4335  ; border-radius: 5px;text-decoration: none;padding: 10px">Clear</a>
 	</div>
@@ -621,8 +621,12 @@ if($_GET["action"]='search'){
                 }
               echo '</table></html>';
 }
-?>
 
+if(isset($_POST['btnsearchpcs'])){
+	
+
+}
+?>
 </body>
  </head>
 </html>

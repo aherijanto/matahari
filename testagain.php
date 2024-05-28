@@ -1,6 +1,6 @@
 <?php
 if( isset($_POST['xlogin']) ) { 
-    $conn = mysqli_connect('localhost','root','root');
+    $conn = mysqli_connect('103.247.8.177','root','root');
     $dbfound=mysqli_select_db('cappadskin');
    
     $username = trim($_POST['username']);

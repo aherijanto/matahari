@@ -10,7 +10,7 @@
 		$custid = $_POST["id"];
 
 		//user sesuaikan dengan permission masing-masing
-			$conn2 = mysqli_connect('localhost','kliz7334_parkerroot','parkerroot@@##','kliz7334_cappamed');
+			$conn2 = mysqli_connect('103.247.8.177','kliz7334_parkerroot','parkerroot@@##','kliz7334_cappamed');
 			$result = mysqli_query($conn2,"delete from doctors where doc_id = '$custid';");
 			if($result){
 				

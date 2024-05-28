@@ -7,9 +7,9 @@
     $today = date('Y-m-d');
     $mfdate = $_POST['_date'];
     
-    if ($mfdate == ''){
-        $selectpcsGlob = "SELECT * FROM wsellhead,wcustomers WHERE  wsellhead.c_code = wcustomers.c_code AND type='A/R' ORDER BY s_dateinput DESC;"; 
-    }
+    // if ($mfdate == ''){
+    //     $selectpcsGlob = "SELECT * FROM wsellhead,wcustomers WHERE  wsellhead.c_code = wcustomers.c_code AND type='A/R' ORDER BY s_dateinput DESC;"; 
+    // }
 
     if ($mfdate == 'today'){
         echo 'TODAY : ';
@@ -19,7 +19,7 @@
         if ($mfdate == 'all'){
             echo 'ALL :';
             $mfdate1 = date('Y-m-d',strtotime($mfdate));
-            $selectpcsGlob = "SELECT * FROM wsellhead,wcustomers WHERE  wsellhead.c_code = wcustomers.c_code AND type='A/R' ORDER BY s_dateinput DESC;";
+            $selectpcsGlob = "SELECT * FROM wsellhead,wcustomers WHERE  wsellhead.c_code = wcustomers.c_code AND type='A/R' ORDER BY s_dateinput DESC LIMIT 50;";
         }else{
             //if ($mfdate == ''){
                 echo 'BY DATE : '.date('d-m-Y',strtotime($mfdate));
@@ -28,11 +28,11 @@
             //}else{
             }
     }
-    
+    //
     $db='mimj5729_matahari';$user='mimj5729_myroot';$pwd='myroot@@##';
     try 
     {
-	    $pdo = new PDO('mysql:host=localhost;dbname='.$db, $user, $pwd);
+	    $pdo = new PDO('mysql:host=103.247.8.177;dbname='.$db, $user, $pwd);
     }
         catch (PDOException $e) 
     {
@@ -120,7 +120,7 @@
        }
 
         $mytable.='<tr style="font-size:12px;"><td width="5%" align="center">'.$nourut.'</td>
-                            <td width="15%" id="noinv">' . $gcodeHead . '</td><td width="20%">Customer : ' .  $cname . '</td><td width="15%">Date : ' . date('d-m-Y', strtotime($date1)) . '</td><td width="15%">'.$duedatecolor . '</td><td width="10%" align="right">' . number_format($grandtotal) . '</td><td width="10%" align="right" style="padding-left:10px;">' . number_format($grandaccr) . '</td><td width="20%" align="right" style="padding-left:10px;">' . $statusaccr . '</td>
+                            <td width="15%" id="noinv">' . $gcodeHead . '</td><td width="20%">Customer : ' .  $cname . '</td><td width="15%">Date : ' . date('d-m-Y', strtotime($date1)) . '</td><td width="15%">'.$duedatecolor . '</td><td width="10%" align="right">' . number_format((float)$grandtotal,0) . '</td><td width="10%" align="right" style="padding-left:10px;">' . number_format((float)$grandaccr,0) . '</td><td width="20%" align="right" style="padding-left:10px;">' . $statusaccr . '</td>
                             </tr>';
         
     } //while*/

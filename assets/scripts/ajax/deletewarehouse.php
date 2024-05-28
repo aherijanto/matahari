@@ -9,7 +9,7 @@
 
 		$wareid = $_POST["id"];
 
-			$conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+			$conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
 			$result = mysqli_query($conn2,"delete from wwarehouse where ware_id = '$wareid';");
 			if($result){
 				

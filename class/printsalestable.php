@@ -40,7 +40,7 @@ $myinvno1=$_GET['invno'];
 $payme=0;
 $changeme=0;
 
-$conn3=mysqli_connect('localhost','root','root','utama');
+$conn3=mysqli_connect('103.247.8.177','root','root','utama');
 //mysqli_select_db('inventory');
 
 echo '<table width="100%">';
