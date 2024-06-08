@@ -161,7 +161,7 @@ if(!empty($_GET["action"]))
 					echo '<script>
 							alert("Kolom Reference No Harus Diisi...");
 						  </script>';
-					
+					//
 					header('Location:purchase.php?action=new');
 				}
 
@@ -195,7 +195,7 @@ if(!empty($_GET["action"]))
 						$purchaseDetail->save_purchase_tail($myExp);
 
 						/*UPDATE INVENTORY*/
-						$myinvent=new Inventory('','','','','','','','','','','','','','','','','','','','','','','','','','');
+						$myinvent=new Inventory('','','','','','','','','','','','','','','','','','','','','','','','','','','','');
 						$myinvent->update_inventory_purchase($myItemCode,$myQty);
 				}
 				
