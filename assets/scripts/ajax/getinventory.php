@@ -13,7 +13,7 @@
         }
     }
    
-            $DB_Server = "103.247.8.177";   
+            $DB_Server = "103.247.8.181";   //103.247.8.177
             $DB_Username = "mimj5729_myroot";   
             $DB_Password = "myroot@@##";               
             $DB_DBName = "mimj5729_matahari";          
@@ -23,7 +23,7 @@
             
 
             $Connect = mysqli_connect($DB_Server, $DB_Username, $DB_Password) or die("Couldn't connect to MySQL:<br>" . mysqli_error($Connect) . "<br>" . mysqli_errno($Connect));
-
+            mysqli_set_charset($Connect, "utf8");
             //select database   
             $Db = mysqli_select_db($Connect, $DB_DBName) or die("Couldn't select database:<br>" . mysqli_error($Connect). "<br>" . mysqli_errno($Connect));   
 

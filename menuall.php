@@ -64,7 +64,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:
             <a class="dropdown-item" href="/reports/_rptpurchaseperdateperioddetail.php">Purchasing Per Period Detail</a>
             <a class="dropdown-item" href="/reports/_rptpurchaseperdateperinvoice.php">Purchasing Per Invoice</a>
             <a class="dropdown-item" href="/reports/_rptdiscountperdateperiod.php">Discount Per Date Period</a>
-          </div>
+            <a class="dropdown-item" href="./reports/_rptmutasiperperiod.php">Mutasi Per Date Period </a>
         </li>
 
         <li class="nav-item dropdown active">

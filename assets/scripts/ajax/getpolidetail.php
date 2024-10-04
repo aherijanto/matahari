@@ -9,7 +9,7 @@
 
 		$poliid = $_POST["id"];
 
-			$conn2 = mysqli_connect('103.247.8.177','kliz7334_parkerroot','parkerroot@@##','kliz7334_cappamed');
+			$conn2 = mysqli_connect('localhost','kliz7334_parkerroot','parkerroot@@##','kliz7334_cappamed');
 			$result = mysqli_query($conn2,"select * from poli where poli_id = '$poliid';");
 			if(!$result){
 				die();

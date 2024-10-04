@@ -49,7 +49,7 @@
     </body>
     <div id="detail"></div>
  </html>
-<script src="./assets/scripts/js/mutation.js"></script>
+<script src="./assets/scripts/js/mutation.js?id=1"></script>
 
 
 

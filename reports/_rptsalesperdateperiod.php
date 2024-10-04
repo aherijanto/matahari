@@ -75,18 +75,7 @@ if (isset($_POST['datesubmit'])) {
     include $upone . "/class/_parkerconnection.php";
 
     if ($mytype=="All"){
-        try {
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //$selectpcsGlob="SELECT * FROM `wbuyhead`,`wbuytail` WHERE wbuytail.b_code=wbuyhead.b_code";
-            $selectpcsGlob = "SELECT * FROM wsellhead,wcustomers WHERE s_date BETWEEN '$mydate1' AND '$mydate2' AND wsellhead.c_code = wcustomers.c_code";
-            $stmtpcsGlob = $pdo->prepare($selectpcsGlob);
-            //$stmt->bindParam(':c_code', $mcode, PDO::PARAM_STR);
-    
-            $stmtpcsGlob->execute();
-            $totalpcsGlob = $stmtpcsGlob->rowCount();
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-        }
+        
 
     }else{
         try {

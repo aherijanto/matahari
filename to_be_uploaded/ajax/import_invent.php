@@ -172,7 +172,7 @@
         array_push($_SESSION['cart_item'],$itemArray);
     }
         
-    $conn2 = mysqli_connect('103.247.8.177','mimj5729_myroot','myroot@@##','mimj5729_matahari');
+    $conn2 = mysqli_connect('localhost','mimj5729_myroot','myroot@@##','mimj5729_matahari');
     $countupdate=0;
     $countinsert=0;
     foreach($_SESSION['cart_item'] as $item){

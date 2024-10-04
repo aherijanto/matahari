@@ -42,7 +42,7 @@ function viewItems() {
       $(".link1").bind("click", function () {
         var id = $(this).attr("hreff");
         //$('#message').html(id + ' removed');
-        console.log(id);
+        
         $.ajax({
           type: "POST",
           url: "/assets/scripts/ajax/removeperitemsales.php",
@@ -86,7 +86,6 @@ function newTrans() {
         $("#TableSummary").html("");
         $("#txtpayment").val("0");
         $("#txtchange").val("0");
-
         getGrandTotal();
       }
     },
@@ -540,15 +539,15 @@ function updatecomment(x,y,z){
 $(document).ready(function () {
   $(document).on("keydown", disableF5);
  
-    const getParameter = (key) => {
-      // Address of the current window
-      address = window.location.search
-      // Returns a URLSearchParams object instance
-      parameterList = new URLSearchParams(address)
-      // Returning the respected value associated
-      // with the provided key
-      return parameterList.get(key)
-    }
+  const getParameter = (key) => {
+    // Address of the current window
+    address = window.location.search
+    // Returns a URLSearchParams object instance
+    parameterList = new URLSearchParams(address)
+    // Returning the respected value associated
+    // with the provided key
+    return parameterList.get(key)
+  }
   
 // Gets the value associated with the key "ie"
     console.log(getParameter("tag"))

@@ -5,7 +5,7 @@
     
     // if(isset($_POST['submit'])){
          
-            $DB_Server = "103.247.8.177";   
+            $DB_Server = "localhost";   
             $DB_Username = "mimj5729_myroot";   
             $DB_Password = "myroot@@##";               
             $DB_DBName = "mimj5729_matahari";          

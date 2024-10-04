@@ -63,6 +63,7 @@ echo '<!DOCTYPE html>
       <a href="./reports/_rptsalessumdetail.php">Net Sales Detail Per Date Period A</a>
       <a href="./reports/_rptsalessumdetailperbrands.php">Sales Per Brand Per Period </a>
       <a href="./reports/_rptsalessumdetailnoret.php">Gross Sales Detail Per Date Period </a>
+      <a href="./reports/_rptmutasiperperiod.php">Mutasi  Per Date Period </a>
     </div>
   </li>
 

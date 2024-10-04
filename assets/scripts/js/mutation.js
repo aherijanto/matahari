@@ -5,6 +5,7 @@ function nView(){
         url: "/assets/scripts/ajax/getinventory.php",
         data: "icode=" + icode,
         success: function (response) {
+            console.log(response);
             var selectsource = $("#source");
             var selectdestination = $("#destination");
             var jsonObject = $.parseJSON(response);
@@ -17,12 +18,60 @@ function nView(){
         }
       });
 }
+
+function showSuccessSwal() {
+    console.log('inside the second swal');
+    swal({
+        title: "Saved Successfully!",
+        text: "Your data has been saved successfully.",
+        type: "success",
+        showConfirmButton: false,
+        timer: 6000
+    });
+}
+
+function saveData(codesrc, codedst, qtysrc) {
+    return new Promise(function(resolve, reject) {
+        $.ajax({
+            type: "POST",
+            url: "/assets/scripts/ajax/saveupdatemutation.php",
+            data: "con_from=" + codesrc + "&con_to=" + codedst + "&con_qtyfrom=" + qtysrc + "&con_qtyto=" + qtysrc + "&username=mimo",
+            success: function(response) {
+                resolve(response);
+            },
+            error: function(error) {
+                reject(error);
+            }
+        });
+    });
+}
+
+function updateInventory(codesrc,codedst,qtysrc,qtydest){
+    $.ajax({
+        type: "POST",
+        url: "/assets/scripts/ajax/updatemutationinvent.php",
+        data: "icodesource=" + codesrc + "&icodedestination=" + codedst + "&qtysource=" + qtysrc + "&qtydestination=" + qtydest,
+        success: function (response) {
+            console.log(response);
+        }
+    });
+}
+
 $(document).ready(function () {
-   var iqtydest;
+    var codesrc;
+    var codedst;
+    var qtysrc;
+    var qtydest;
+    var codedst;
+    var codesrc;
+
     nView();
     $('#source').on('change', function() {
         if(this.value=="0"){
             $('#srcdetail').html('');
+        }else{
+            codesrc = this.value;
+            console.log('codesrc : ' + codesrc);
         }
         $('#destdetail').html('');
         $.ajax({
@@ -37,7 +86,7 @@ $(document).ready(function () {
                     $("#srcdetail").html("Name : "+obj.iname+"<br>"+"Qty : "+obj.iqty+" (current)<br>"+"Ware Name: "+obj.warename+"<br>"+"Input Qty : ");
                     $("#srcdetail").append('<input type="text" id="qtysrc" value="0" />');
                     $('#qtysrc').on("input",function(e){
-                        var qtysrc = $("#qtysrc").val();
+                        qtysrc = $("#qtysrc").val();
                         var totalsrc = parseInt(obj.iqty)-parseInt(qtysrc);
 
                         $('#qtydest').val(qtysrc);
@@ -65,6 +114,9 @@ $(document).ready(function () {
     $('#destination').on('change', function() {
         if(this.value=="0"){
             $('#destdetail').html('');
+        }else{
+            codedst = this.value;
+            console.log('code dest: '+codedst)
         }
         $.ajax({
             type: "POST",
@@ -77,7 +129,7 @@ $(document).ready(function () {
                     $("#destdetail").html("");
                     $("#destdetail").html("Name : "+obj.iname+"<br>"+"Qty : "+obj.iqty+" (current)<br>"+"Ware Name: "+obj.warename+"<br>"+"Input Qty : ");
                     $("#destdetail").append('<input type="text" id="qtydest" value="0" readonly/>');
-                    var qtydest = $("#qtysrc").val();
+                    qtydest = $("#qtysrc").val();
                     iqtydest = obj.iqty;
                     console.log("change dst "+iqtydest);
                     $('#qtydest').val(qtydest);
@@ -94,7 +146,60 @@ $(document).ready(function () {
 
     $("#process").click(function(){
         var totalsrcqty = $("#totalsrc").html();
-        console.log(totalsrcqty)
+        console.log(totalsrcqty);
+        swal({
+            title: 'Are you sure to do item mutation?',
+            text: "Please make sure the data is valid before you proceed, You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Confirm!'
+        },function(isConfirm){
+            if (isConfirm) {
+                saveData(codesrc, codedst, qtysrc).then(function(response) {
+                    if (response == 1) {
+                        console.log('second swal');
+                        updateInventory(codesrc,codedst,qtysrc,qtydest);
+                        showSuccessSwal(); // Function to display success message with swal
+                    } else {
+                        // Handle error response
+                    }
+                });
+            } else {
+                alert('closed');
+            }
+                // if (isConfirm){
+                //     //console.log(qtysrc);
+                //     $.ajax({
+                //         type: "POST",
+                //         url: "/assets/scripts/ajax/saveupdateconversion.php",
+                //         data: "con_from=" + codesrc + "&con_to=" + codedst + "&con_qtyfrom=" + qtysrc + "&con_qtyto=" + qtysrc + "&username=mimo",
+                //         success: function (response) {
+                //             console.log(response);
+                //             // var json_reply = $.parseJSON(response); //Only if not already an object
+                //             // $.each(json_reply,function (i, objresp) {
+                //             //     reply = objresp.reply;
+                //             //     console.log(reply);
+                               
+                //              if(response == 1){
+                //                 showSuccessSwal();
+                //              }       
+    
+
+                                
+                                
+                //             // })
+                            
+                //         }
+                //     });// close ajax
+
+                // } else {
+                //     alert('closed');
+                // }
+            }
+        );
+
     })
     $("#cancel").click(function(){
         window.open('dashboard.php','_self');
